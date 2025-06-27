@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderColor:'white',
         borderRadius:10,
-        alignItems:'stretch',
+        alignItems:'center',
     },
     intructionsText:{
         fontSize:22,

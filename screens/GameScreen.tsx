@@ -27,7 +27,7 @@ let minBoundary = 1;
 let maxBoundary = 100;
 
 export default function GameScreen({ chosenNumber, onRtart, onEnd }: gameProps) {
-    const initialGuess = generateRandomBetween(minBoundary, maxBoundary, chosenNumber);
+    const initialGuess = generateRandomBetween(1, 100, chosenNumber);
     const [guessedNumber, setGuessedNumber] = useState<number>(initialGuess);
 
 
@@ -36,6 +36,12 @@ export default function GameScreen({ chosenNumber, onRtart, onEnd }: gameProps) 
             onEnd();
         }
     }, [guessedNumber, chosenNumber, onEnd]);
+
+
+    useEffect(()=>{
+        minBoundary=1;
+        maxBoundary=100;
+    },[])
     // if (guessedNumber === chosenNumber) {
     //     Alert.alert("Congrats", "You WON", [{text:'Congrats!', style:'default'}])
     //     return ;

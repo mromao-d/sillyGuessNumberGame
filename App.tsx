@@ -17,8 +17,11 @@ export default function App() {
   const [userNumber, setUserNumber] = useState<number | null>();
   const [gameIsOver, setGameIsOver] = useState<boolean>(true);
 
+  
   function resetGameHandler() {
     setUserNumber(null);
+    setGameIsOver(true);
+
   }
 
   function pickedNumberHandler(pickedNumber: number) {
@@ -30,7 +33,7 @@ export default function App() {
     setGameIsOver(true);
   }
 
-  let screen = <StartGameScreen onConfirmNumber={pickedNumberHandler} min={1} max={100}/>;
+  let screen = <StartGameScreen onConfirmNumber={pickedNumberHandler}/>;
 
   if (userNumber) {
     screen=<GameScreen chosenNumber={userNumber}  onRtart={resetGameHandler} onEnd={gameOverHandler}/>;
@@ -38,10 +41,6 @@ export default function App() {
 
   if (gameIsOver && userNumber) {
     screen=<GameOverScreen onRestart={resetGameHandler}/>
-  }
-
-  if (gameIsOver && !userNumber) {
-    screen=<StartGameScreen onConfirmNumber={pickedNumberHandler}/>
   }
 
   return (

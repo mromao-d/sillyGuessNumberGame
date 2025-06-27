@@ -15,19 +15,15 @@ export default function Title(props:titleProps) {
 }
 
 const styles = StyleSheet.create({
-    screenContainer: {
-        flex:1,
-        padding:12,
-    },
-    titleContainer:{
-        borderWidth: 2,
-        borderColor:Colors.yeallow1,
-    },
     title:{
         fontSize:24,
         fontWeight:'bold',
         color:'white',
         textAlign:'center',
-        alignItems:'stretch',
+        // borderWidth:2,
     },
 })
+
+
+
+
